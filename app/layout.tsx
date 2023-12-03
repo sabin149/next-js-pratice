@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
-
-const inter = Inter({ subsets: ["latin"] });
+import Navbar from "./components/Navbar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,15 +14,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className + " p-4"}>
-        <div>
-          <Link href="/" className="mr-3 hover:underline">
-            Home
-          </Link>
-          <Link href="/users" className="hover:underline">
-            Users
-          </Link>
-        </div>
+      <body className="bg-slate-800">
+        <Navbar />
         {children}
       </body>
     </html>
